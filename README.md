@@ -1,4 +1,4 @@
-# Happy Birthday Wishes
+# Happy Birthday
 
 ![Happy Birthday Image](https://github.com/user-attachments/assets/3beb90ef-b36a-4ada-a35e-b731078655ae)
 
