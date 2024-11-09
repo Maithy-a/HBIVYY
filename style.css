@@ -1,0 +1,206 @@
+
+* {
+    box-sizing: border-box;
+  }
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Faculty+Glyphic&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+body{
+    background: linear-gradient(#9FF781, #F3F781);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    
+}
+img{
+    max-width: 100%;
+    bottom: -50%;
+}
+#cake {
+  display: block;
+  position: relative;
+  margin: -10em auto 0 auto;
+}
+
+/* ============================================== Candle
+*/
+
+.velas {
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  top: 255px;
+  left: 50%;
+  margin-left: -2.5px;
+  width: 8px;
+  height: 35px;
+  transform: translateY(-300px);
+  backface-visibility: hidden;
+  animation: in 500ms 6s ease-out forwards;
+}
+.velas:after,
+.velas:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+}
+.velas:after {
+  top: 25%;
+  left: 0;
+}
+.velas:before {
+  top: 45%;
+  left: 0;
+}
+
+/* ============================================== Fire
+*/
+
+.fuego {
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -2.6px;
+  width: 10px;
+  height: 20px;
+}
+.fuego:nth-child(1) {
+  animation: fuego 2s 6.5s infinite;
+}
+.fuego:nth-child(2) {
+  animation: fuego 1.5s 6.5s infinite;
+}
+.fuego:nth-child(3) {
+  animation: fuego 1s 6.5s infinite;
+}
+.fuego:nth-child(4) {
+  animation: fuego 0.5s 6.5s infinite;
+}
+.fuego:nth-child(5) {
+  animation: fuego 0.2s 6.5s infinite;
+}
+
+/* ============================================== Animation Fire
+*/
+
+@keyframes fuego {
+  0%,
+  100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px #f7ead433;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px #f8e9d133;
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+@keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.text {
+  color: #8b6a60;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+.message {
+  color: white;
+  height: auto;
+  max-width: 500px;
+  position: relative;
+  background-color: #a16f608f;
+  border-radius: 20px;
+  padding: 15px;
+  font-family: "Faculty Glyphic", sans-serif;
+  font-weight: 400;
+  margin: 0 auto 0 auto;
+  border-left: 2.5px solid white;
+}
+
+/* Confetti base styling */
+.confetti {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    opacity: 0;
+    overflow: hidden;
+    animation: fall 5s ease-in-out infinite;
+}
+
+/* Keyframes for the falling and swaying motion */
+@keyframes fall {
+    0% {
+        top: -5%;
+        opacity: 1;
+        transform: translateX(0) skew(-30deg);
+    }
+    25% {
+        transform: translateX(50px) skew(30deg);
+    }
+    50% {
+        transform: translateX(-50px) skew(-30deg);
+    }
+    75% {
+        transform: translateX(50px) skew(30deg);
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: translateX(-50px) skew(-30deg);
+    }
+}
+/*Cursor*/
+
+.cursor, .cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 9999;
+  }
+  
+  /* Main cursor */
+  .cursor {
+    width: 8px;
+    height: 8px;
+    pointer-events: none;
+    background-color: #FA6A19;
+    transition: transform 0.15s ease;
+  }
+  
+  /* Follower cursor */
+  .cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FA6A19;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
+  }
+  
+  /* Hover effect on links */
+  a:hover + .cursor-follower, a:hover .cursor {
+    transform: scale(1.5);
+  }
+  
+  #typing-effect {
+    display: inline;
+    border-right: 2px solid #FA6A19; /* Blinking cursor color */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.7s step-end infinite;
+}
+
+/* Blinking caret */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #a16f608f; }
+}
