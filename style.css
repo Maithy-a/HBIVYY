@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Faculty+Glyphic&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 body {
   background: linear-gradient(#9ff781, #f3f781);
-  height: 100%;
-  width: 100%;
-  margin: 0;
   overflow-x: hidden;
+  max-height: 100%;
+  
 }
 img {
+  position: relative;
+  z-index: 999999;
   max-width: 100%;
   bottom: -50%;
 }
@@ -26,7 +30,7 @@ img {
   background: #ffffff;
   border-radius: 8px;
   position: relative;
-  top: 255px;
+  top: 249.9999px;
   left: 50%;
   margin-left: -2.5px;
   width: 8px;
@@ -180,7 +184,7 @@ img {
 
 .accordion:has(input:checked) {
   border-color: #c7a34283;
-  color:#8b6a60;
+  color: #8b6a60;
   background-image: url(bg.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -286,4 +290,24 @@ a:hover .cursor {
   50% {
     border-color: #a16f608f;
   }
+}
+.disclaimer {
+  bottom: 0;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  width: fit-content;
+  color: #8b6a60;
+  text-align: center;
+  font-family: "Belanosima", sans-serif;
+}
+.disclaimer a {
+  text-decoration: none;
+  color: #8b6a60;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 900;
+}
+.disclaimer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
