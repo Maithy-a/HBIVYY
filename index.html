@@ -12,9 +12,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/favicon_io/site.webmanifest">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
-
 </head>
 
 <body class="js-container container">
@@ -219,7 +216,19 @@
     </div>
     </div>
     <p class="disclaimer">Designed & Created with love  by <a href="https://github.com/Maithy-a" target="_blank">Maithy-a</a></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#myParagraph").text("jQuery is working!");
+      });
+    </script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        // GSAP code here...
+        gsap.to(".myElement", { duration: 1, x: 100 });
+      </script>
 </body>
 
 </html>
