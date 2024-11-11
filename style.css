@@ -180,7 +180,7 @@ img {
 
 .accordion:has(input:checked) {
   border-color: #c7a34283;
-  color: #23231cc4;
+  color:#8b6a60;
   background-image: url(bg.png);
   background-position: center;
   background-repeat: no-repeat;
