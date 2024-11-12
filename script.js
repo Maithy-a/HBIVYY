@@ -1,3 +1,31 @@
+// Typing effect
+const typingEffect = document.getElementById('typing-effect');
+const text = "Happy Birthday";
+let i = 0;
+
+function typeWriter() {
+  if (i < text.length) {
+    typingEffect.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 100);
+  }
+}
+
+// Start typing effect when the page loads
+window.addEventListener('load', typeWriter);
+
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  
+  cursorFollower.style.left = e.clientX + 'px';
+  cursorFollower.style.top = e.clientY + 'px';
+});
+
 // Select the container where the confetti will be appended
 const container = document.body;
 
@@ -27,46 +55,36 @@ for (let i = 0; i < 35; i++) {
     createConfettiPiece();
 }
 
-//cursor
-// Select elements
-const cursor = document.querySelector(".cursor");
-const follower = document.querySelector(".cursor-follower");
+// Prevent default scrolling behavior
+document.addEventListener('wheel', (e) => {
+  e.preventDefault();
+}, { passive: false });
 
-document.addEventListener("mousemove", (e) => {
-  // Set cursor position
-  cursor.style.left = e.pageX + "px";
-  cursor.style.top = e.pageY + "px";
-
-  // Smooth follower movement
-  follower.style.transform = `translate(${e.pageX - 20}px, ${e.pageY - 20}px)`;
+// Smooth scroll to content
+document.querySelector('.accordion__header').addEventListener('click', () => {
+  const content = document.querySelector('.accordion__content');
+  content.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-// Optional: Add a hover effect on links to scale the cursor
-document.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    cursor.classList.add("hover");
-    follower.classList.add("hover");
-  });
+// Adjust body height to prevent scrolling issues
+function adjustBodyHeight() {
+  const body = document.body;
+  const html = document.documentElement;
+  const height = Math.max(
+    body.scrollHeight,
+    body.offsetHeight,
+    html.clientHeight,
+    html.scrollHeight,
+    html.offsetHeight
+  );
+  body.style.height = height + 'px';
+}
 
-  link.addEventListener("mouseleave", () => {
-    cursor.classList.remove("hover");
-    follower.classList.remove("hover");
-  });
-});
+window.addEventListener('load', adjustBodyHeight);
+window.addEventListener('resize', adjustBodyHeight);
 
-//TYPING
-document.addEventListener("DOMContentLoaded", function() {
-    const text = "Happy Birthday!!"; 
-    const typingElement = document.getElementById("typing-effect");
-    let index = 0;
-
-    function type() {
-        if (index < text.length) {
-            typingElement.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, 100); 
-        }
-    }
-
-    type();
-});
+//adding song
+const audio = new Audio('song.mp3');
+document.body.addEventListener('load', () => {
+  audio.play();
+}, { once: true });
