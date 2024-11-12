@@ -55,10 +55,10 @@ for (let i = 0; i < 35; i++) {
     createConfettiPiece();
 }
 
-// Prevent default scrolling behavior
+/*/ Prevent default scrolling behavior
 document.addEventListener('wheel', (e) => {
   e.preventDefault();
-}, { passive: false });
+}, { passive: false });*/
 
 // Smooth scroll to content
 document.querySelector('.accordion__header').addEventListener('click', () => {
@@ -66,7 +66,7 @@ document.querySelector('.accordion__header').addEventListener('click', () => {
   content.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-// Adjust body height to prevent scrolling issues
+/* Adjust body height to prevent scrolling issues
 function adjustBodyHeight() {
   const body = document.body;
   const html = document.documentElement;
@@ -82,9 +82,5 @@ function adjustBodyHeight() {
 
 window.addEventListener('load', adjustBodyHeight);
 window.addEventListener('resize', adjustBodyHeight);
+*/
 
-//adding song
-const audio = new Audio('song.mp3');
-document.body.addEventListener('load', () => {
-  audio.play();
-}, { once: true });
