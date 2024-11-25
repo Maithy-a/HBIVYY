@@ -1,6 +1,6 @@
 // Typing effect
 const typingEffect = document.getElementById('typing-effect');
-const text = "Happy Birthday";
+const text = "Happy Birthday...";
 let i = 0;
 
 function typeWriter() {
@@ -21,7 +21,7 @@ const cursorFollower = document.querySelector('.cursor-follower');
 document.addEventListener('mousemove', (e) => {
   cursor.style.left = e.clientX + 'px';
   cursor.style.top = e.clientY + 'px';
-  
+
   cursorFollower.style.left = e.clientX + 'px';
   cursorFollower.style.top = e.clientY + 'px';
 });
@@ -31,28 +31,28 @@ const container = document.body;
 
 // Function to create a single confetti element
 function createConfettiPiece() {
-    const confetti = document.createElement('div');
-    confetti.classList.add('confetti');
-    
-    // Randomize confetti properties
-    const randomLeft = Math.random() * 100; // Random left position in viewport width %
-    const randomDelay = Math.random() * 5;  // Random animation delay (0s to 5s)
-    const randomColor = `rgb(${Math.floor(Math.random() * 255)}, 
+  const confetti = document.createElement('div');
+  confetti.classList.add('confetti');
+
+  // Randomize confetti properties
+  const randomLeft = Math.random() * 100; // Random left position in viewport width %
+  const randomDelay = Math.random() * 5;  // Random animation delay (0s to 5s)
+  const randomColor = `rgb(${Math.floor(Math.random() * 255)}, 
                            ${Math.floor(Math.random() * 255)}, 
                            ${Math.floor(Math.random() * 255)})`;
 
-    // Apply random properties
-    confetti.style.left = `${randomLeft}vw`;   // Position in viewport width
-    confetti.style.animationDelay = `${randomDelay}s`;
-    confetti.style.backgroundColor = randomColor;
+  // Apply random properties
+  confetti.style.left = `${randomLeft}vw`;   // Position in viewport width
+  confetti.style.animationDelay = `${randomDelay}s`;
+  confetti.style.backgroundColor = randomColor;
 
-    // Append confetti to the container
-    container.appendChild(confetti);
+  // Append confetti to the container
+  container.appendChild(confetti);
 }
 
 // Generate multiple confetti pieces
 for (let i = 0; i < 35; i++) {
-    createConfettiPiece();
+  createConfettiPiece();
 }
 
 /*/ Prevent default scrolling behavior
