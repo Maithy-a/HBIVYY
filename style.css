@@ -149,7 +149,7 @@ img {
   border: 1px solid #a16f608f;
   margin-bottom: 1rem;
   overflow: hidden;
-  transition: border-color 1.5s ease;
+  transition:1.5s ease-in;
   background-color: #a16f6038;
   border-radius: 12px;
   font-family: "Faculty Glyphic", sans-serif;
@@ -192,7 +192,8 @@ img {
 .accordion__content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in;
+  transition: all 1.3s ease-out;
+
 }
 
 .accordion__content > * {
